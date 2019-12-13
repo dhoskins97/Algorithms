@@ -5,7 +5,7 @@ import math
 def recipe_batches(recipe, ingredients):
   tracker = []
   for item in recipe:
-    if item in ingredients.keys():
+    if item in ingredients:
       tracker.append(int(ingredients[item] / recipe[item]))
     else:
       tracker.append(0)
