@@ -3,7 +3,19 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  tracker = []
+  for item in recipe:
+    if item in ingredients:
+      tracker.append(int(ingredients[item] / recipe[item]))
+    else:
+      tracker.append(0)
+
+  smallest = 0
+  for i in range(0, len(tracker)):
+    if tracker[i] < tracker[smallest]:
+      smallest = i
+  
+  return tracker[smallest]
 
 
 if __name__ == '__main__':
